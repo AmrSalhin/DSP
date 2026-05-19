@@ -1,21 +1,28 @@
-20:58:23 **** Incremental Build of configuration Debug for project 1-Ploting_signal ****
+00:02:23 **** Incremental Build of configuration Debug for project 2-UART_driver ****
 make -j16 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F401RCTx -DSTM32F401xE -c -I../Inc -I"..//chip_headers/CMSIS/Include" -I"..//chip_headers/CMSIS/Device/ST/STM32F4xx/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "1-Ploting_signal.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\DSP_on_arm processor\1-Ploting_signal\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="1-Ploting_signal.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: 1-Ploting_signal.elf
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F401RCTx -DSTM32F401xE -c -I../Inc -I..//chip_headers/CMSIS/Include -I..//chip_headers/CMSIS/Device/ST/STM32F4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "2-UART_driver.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\DSP_on_arm processor\2-UART_driver\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="2-UART_driver.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 2-UART_driver.elf
  
-arm-none-eabi-size  1-Ploting_signal.elf 
-arm-none-eabi-objdump -h -S 1-Ploting_signal.elf  > "1-Ploting_signal.list"
+arm-none-eabi-size  2-UART_driver.elf 
+arm-none-eabi-objdump -h -S 2-UART_driver.elf  > "2-UART_driver.list"
    text	   data	    bss	    dec	    hex	filename
-    800	   1204	   1572	   3576	    df8	1-Ploting_signal.elf
+   3612	     92	   1900	   5604	   15e4	2-UART_driver.elf
 Finished building: default.size.stdout
  
-Finished building: 1-Ploting_signal.list
+Finished building: 2-UART_driver.list
  
-21:00:40 **** Incremental Build of configuration Debug for project 1-Ploting_signal ****
+00:03:18 **** Incremental Build of configuration Debug for project 2-UART_driver ****
 make -j16 all 
-arm-none-eabi-size  1-Ploting_signal.elf 
+arm-none-eabi-size  2-UART_driver.elf 
    text	   data	    bss	    dec	    hex	filename
-    800	   1204	   1572	   3576	    df8	1-Ploting_signal.elf
+   3612	     92	   1900	   5604	   15e4	2-UART_driver.elf
+Finished building: default.size.stdout
+ 
+00:07:15 **** Incremental Build of configuration Debug for project 2-UART_driver ****
+make -j16 all 
+arm-none-eabi-size  2-UART_driver.elf 
+   text	   data	    bss	    dec	    hex	filename
+   3612	     92	   1900	   5604	   15e4	2-UART_driver.elf
 Finished building: default.size.stdout
  

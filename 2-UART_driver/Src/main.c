@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include "stm32f4xx.h"
+#include "uart.h"
+
+static void delay(int delay_time);
+
+int main()
+{
+	/* Enable FPU: Enable CP10 and CP11 Coprocessors full access */
+	SCB->CPACR |= ((3UL << 10 * 2) | (3UL << 11 * 2));
+  UART_Tx_Init();
+
+	while(1)
+	{
+		printf("Hello, UART!\n");
+    delay(1000000);
+	}
+}
+
+
+
+static void delay(int delay_time)
+{
+	for (int i = 0; i < delay_time; i++)
+	{
+	}
+}
