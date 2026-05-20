@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include "stm32f4xx.h"
+#include "uart.h"
+#include "signals.h"
+
+extern float _5hz_signal[_5hz_signal_SIZE];
+float g_input_signal_sample;
+
+static void delay(int delay_time);
+static void FBU_Enable(void);
+
+int main()
+{
+	/* Enable FPU: Enable CP10 and CP11 Coprocessors full access */
+	FBU_Enable();
+	UART_Tx_Init();
+
+	while(1)
+	{
+		for(int i=0; i<_5hz_signal_SIZE; i++)
+	{
+		printf("%f\r\n", _5hz_signal[i]);
+		delay(9000);
+	}
+
+	}
+}
+
+
+
+static void delay(int delay_time)
+{
+	for (int i = 0; i < delay_time; i++)
+	{
+	}
+}
+
+static void FBU_Enable(void)
+{
+	/* Enable FPU: Enable CP10 and CP11 Coprocessors full access */
+	SCB->CPACR |= ((3UL << 10 * 2) | (3UL << 11 * 2));
+}

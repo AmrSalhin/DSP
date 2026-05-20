@@ -1,0 +1,10 @@
+23:01:12 **** Incremental Build of configuration Debug for project 4-integrating_CMSIS_library ****
+make -j16 all 
+arm-none-eabi-size  4-integrating_CMSIS_library.elf 
+   text	   data	    bss	    dec	    hex	filename
+  23520	   1660	   1900	  27080	   69c8	4-integrating_CMSIS_library.elf
+Finished building: default.size.stdout
+ 
+
+23:01:12 Build Finished. 0 errors, 0 warnings. (took 200ms)
+

@@ -1,0 +1,17 @@
+22:19:27 **** Incremental Build of configuration Debug for project 3-Plot_using_serial_plotter ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F401RCTx -DSTM32F401xE -c -I../Inc -I..//chip_headers/CMSIS/Include -I..//chip_headers/CMSIS/Device/ST/STM32F4xx/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "3-Plot_using_serial_plotter.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\DSP_on_arm processor\3-Plot_using_serial_plotter\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="3-Plot_using_serial_plotter.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 3-Plot_using_serial_plotter.elf
+ 
+arm-none-eabi-size  3-Plot_using_serial_plotter.elf 
+arm-none-eabi-objdump -h -S 3-Plot_using_serial_plotter.elf  > "3-Plot_using_serial_plotter.list"
+   text	   data	    bss	    dec	    hex	filename
+  23520	   1660	   1900	  27080	   69c8	3-Plot_using_serial_plotter.elf
+Finished building: default.size.stdout
+ 
+Finished building: 3-Plot_using_serial_plotter.list
+ 
+
+22:19:27 Build Finished. 0 errors, 0 warnings. (took 556ms)
+

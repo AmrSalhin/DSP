@@ -1,0 +1,10 @@
+23:01:46 **** Incremental Build of configuration Debug for project 5-testing_cmsis_dsp_float32 ****
+make -j16 all 
+arm-none-eabi-size  5-testing_cmsis_dsp_float32.elf 
+   text	   data	    bss	    dec	    hex	filename
+  23544	   1736	   1904	  27184	   6a30	5-testing_cmsis_dsp_float32.elf
+Finished building: default.size.stdout
+ 
+
+23:01:46 Build Finished. 0 errors, 0 warnings. (took 198ms)
+

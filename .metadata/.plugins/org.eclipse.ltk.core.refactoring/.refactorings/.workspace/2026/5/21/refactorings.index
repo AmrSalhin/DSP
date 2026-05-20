@@ -2,3 +2,9 @@
 1779034260877	Rename resource 'test'
 1779035571350	Delete resource '0-test'
 1779040633044	Delete 2 resources
+1779302763954	Delete resource '2-Plot__using_serial_plotter'
+1779302809313	Delete resource '3-Plot_using_serial_plotter/2-UART_driver Debug.launch'
+1779302818414	Delete resource '3-Plot_using_serial_plotter/Debug'
+1779306440814	Delete resource '5-testing_cmsis_dsp_float32/Debug'
+1779307258666	Delete resource '4-integrating_CMSIS_library/Debug'
+1779307295384	Delete resource '5-testing_cmsis_dsp_float32/Debug'
