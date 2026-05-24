@@ -1,0 +1,89 @@
+#include <stdio.h>
+#include "stm32f4xx.h"
+#include "uart.h"
+#include "signals.h"
+#include "arm_math.h"
+
+extern float _5hz_signal[_5hz_signal_SIZE];
+extern float32_t inputSignal_f32_1kHz_15kHz[KkHz1_15_signal_SIZE];
+float g_input_signal_sample;
+
+static void delay(int delay_time);
+static void serial_plot_input_signal(void);
+static void FBU_Enable(void);
+static float32_t calculate_signal_mean_value(float32_t *signal, uint32_t signal_size);
+static float32_t calculate_signal_variance(float32_t *signal, uint32_t signal_size, float32_t mean_value);
+static float32_t calculate_signal_standard_deviation(float32_t variance);
+
+float32_t g_mean_value;
+float32_t g_variance_value;
+float32_t g_standard_deviation_value;
+float32_t g_signal_std_cmsis;
+
+int main()
+{
+	/* Enable FPU: Enable CP10 and CP11 Coprocessors full access */
+	FBU_Enable();
+	UART_Tx_Init();
+	g_mean_value = calculate_signal_mean_value(inputSignal_f32_1kHz_15kHz, KkHz1_15_signal_SIZE);
+	g_variance_value = calculate_signal_variance(inputSignal_f32_1kHz_15kHz, KkHz1_15_signal_SIZE, g_mean_value);
+	g_standard_deviation_value = calculate_signal_standard_deviation(g_variance_value);
+	arm_std_f32(inputSignal_f32_1kHz_15kHz, KkHz1_15_signal_SIZE, &g_signal_std_cmsis);
+
+	while(1)
+	{
+		serial_plot_input_signal();
+	}
+
+}
+
+static float32_t calculate_signal_mean_value(float32_t *signal, uint32_t signal_size)
+{
+	float32_t mean_value = 0.0f;
+	for (uint32_t i = 0; i < signal_size; i++)
+	{
+		mean_value += signal[i];
+	}
+	mean_value /= (float32_t)signal_size;
+	return mean_value;
+}
+
+static float32_t calculate_signal_variance(float32_t *signal, uint32_t signal_size, float32_t mean_value)
+{
+	float32_t variance = 0.0f;
+	for (uint32_t i = 0; i < signal_size; i++)
+	{
+		variance += ((signal[i] - mean_value) * (signal[i] - mean_value));
+	}
+	variance /= (float32_t)(signal_size - 1);
+	return variance;
+}
+
+static float32_t calculate_signal_standard_deviation(float32_t variance)
+{
+	return sqrtf(variance);
+}
+
+static void serial_plot_input_signal(void)
+{
+	for(int i=0; i<KkHz1_15_signal_SIZE; i++)
+	{
+		printf("%f\r\n", inputSignal_f32_1kHz_15kHz[i]);
+		delay(9000);
+	}
+}
+
+
+
+static void delay(int delay_time)
+{
+	for (int i = 0; i < delay_time; i++)
+	{
+	}
+}
+
+static void FBU_Enable(void)
+{
+	/* Enable FPU: Enable CP10 and CP11 Coprocessors full access */
+	SCB->CPACR |= ((3UL << 10 * 2) | (3UL << 11 * 2));
+}

@@ -1,0 +1,6 @@
+../Src/uart.c:10:5:_io_putchar	1
+../Src/uart.c:16:5:_write	2
+../Src/uart.c:25:6:UART_Tx_Init	1
+../Src/uart.c:48:6:UART_Transmit_char	2
+../Src/uart.c:56:17:UART_BAUD_Icalculate	1
+../Src/uart.c:61:13:UART_Bauderate_set	1

@@ -1,0 +1,23 @@
+14:55:44 **** Incremental Build of configuration Debug for project 9-signal_std_cmsis_DSP ****
+make -j16 all 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F4 -DSTM32F401RCTx -DSTM32F401xE -DARM_MATH_CM4 -D__FPU_PRESENT -c -I../Inc -I"D:/DSP_on_arm processor/9-signal_std_cmsis_DSP/chip_headers/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/DSP_on_arm processor/9-signal_std_cmsis_DSP/chip_headers/CMSIS/DSP/Include/dsp" -I"D:/DSP_on_arm processor/9-signal_std_cmsis_DSP/chip_headers/CMSIS/Include" -I"D:/DSP_on_arm processor/9-signal_std_cmsis_DSP/chip_headers/CMSIS/DSP/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+In file included from D:/DSP_on_arm processor/9-signal_std_cmsis_DSP/chip_headers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:145,
+                 from ../Src/main.c:2:
+D:/DSP_on_arm processor/9-signal_std_cmsis_DSP/chip_headers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xe.h:51:9: warning: "__FPU_PRESENT" redefined
+   51 | #define __FPU_PRESENT             1U       /*!< FPU present                                   */
+      |         ^~~~~~~~~~~~~
+<command-line>: note: this is the location of the previous definition
+arm-none-eabi-gcc -o "9-signal_std_cmsis_DSP.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\DSP_on_arm processor\9-signal_std_cmsis_DSP\STM32F401RCTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="9-signal_std_cmsis_DSP.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 9-signal_std_cmsis_DSP.elf
+ 
+arm-none-eabi-size  9-signal_std_cmsis_DSP.elf 
+arm-none-eabi-objdump -h -S 9-signal_std_cmsis_DSP.elf  > "9-signal_std_cmsis_DSP.list"
+   text	   data	    bss	    dec	    hex	filename
+  24300	   1736	   1920	  27956	   6d34	9-signal_std_cmsis_DSP.elf
+Finished building: default.size.stdout
+ 
+Finished building: 9-signal_std_cmsis_DSP.list
+ 
+
+14:55:45 Build Finished. 0 errors, 1 warnings. (took 920ms)
+

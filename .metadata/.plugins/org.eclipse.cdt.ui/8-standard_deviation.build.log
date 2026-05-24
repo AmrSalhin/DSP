@@ -1,0 +1,10 @@
+13:53:17 **** Incremental Build of configuration Debug for project 8-standard_deviation ****
+make -j16 all 
+arm-none-eabi-size  8-standard_deviation.elf 
+   text	   data	    bss	    dec	    hex	filename
+  23980	   1736	   1912	  27628	   6bec	8-standard_deviation.elf
+Finished building: default.size.stdout
+ 
+
+13:53:17 Build Finished. 0 errors, 0 warnings. (took 199ms)
+

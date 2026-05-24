@@ -1,0 +1,10 @@
+13:37:36 **** Incremental Build of configuration Debug for project 6-Mean_value ****
+make -j16 all 
+arm-none-eabi-size  6-Mean_value.elf 
+   text	   data	    bss	    dec	    hex	filename
+  23672	   1736	   1904	  27312	   6ab0	6-Mean_value.elf
+Finished building: default.size.stdout
+ 
+
+13:37:37 Build Finished. 0 errors, 0 warnings. (took 204ms)
+
